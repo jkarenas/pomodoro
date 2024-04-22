@@ -82,7 +82,7 @@ export const TimerModeDisplay: React.FC<Props> = ({ timerMode, setTimerMode, set
 
         <Pressable onPress={changeMode}>
             
-        <Animated.View style={[styles.placeholderContainer, { transform: [{ translateY: translateYB }, { scale: scaleB }] }]}>
+        <Animated.View style={[styles.placeholderContainer, { transform: [{ translateY: translateYB }, { scale: scaleB }] },{backgroundColor:timerMode ==='Focus' ? '#5f5449' : '#9b6a6c'}]}>
 
           <Text style={styles.placeholderText}>{timerMode === 'Focus' ? 'Break Time' : 'Focus Time'}</Text>
         </Animated.View>
@@ -111,12 +111,18 @@ const styles = StyleSheet.create({
   placeholderContainer: {
     alignItems: "center",
     width: "100%",
-    opacity: 0.5,
     marginTop: 50,
+    borderRadius: 15,
+    borderColor: '#fff7',
+    borderWidth: 3,
+    elevation: 10,
+    padding: 3,
+
   },
   placeholderText: {
-    fontSize: 20,
+    fontSize: 18,
     color: "#fff",
-    fontWeight: '800'
+    fontWeight: '800',
+    opacity: 0.5,
   }
 });

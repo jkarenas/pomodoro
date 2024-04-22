@@ -46,7 +46,7 @@ export const TimerToggleButton: React.FC<Props> = ({
 
     return (
         <Pressable onPress={isTimerRunning ? stopTimer : startTimer}>
-            <View style={{ ...styles.container, ...{ backgroundColor: timerMode === 'Break' ? '#1e1e24' : '#92140c' } }}>
+            <View style={{ ...styles.container, ...{ backgroundColor: timerMode === 'Break' ? '#9b6a6c' : '#5f5449' } }}>
                 <Animated.View style={[styles.innerContainer, { borderWidth: borderWidth }]}>
                     <FontAwesome
                         name={isTimerRunning ? 'pause' : 'play'}
@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     icon: {
         alignSelf: "center",
         color: "#fff",
+        
     },
     container: {
         width: 250,
@@ -71,13 +72,17 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         backgroundColor: "#d95550",
         marginVertical: 50,
+        elevation: 15,
+        borderWidth: 4,
+        borderColor: '#fff1'
     },
     innerContainer: {
         width: 240,
         height: 240,
         borderRadius: 240 / 2,
         justifyContent: "center",
-        borderColor: "rgba(255, 255, 255, 0.5)", // Color blanco con 50% de opacidad
-        borderWidth: 50, // Ancho del borde
+        borderColor: "rgba(255, 255, 255, 0.5)", 
+        borderWidth: 50,
+
     }
 })
